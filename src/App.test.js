@@ -1,3 +1,4 @@
+//tutorial removed this
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
