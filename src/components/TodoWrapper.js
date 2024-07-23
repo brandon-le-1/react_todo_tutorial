@@ -10,7 +10,6 @@ export const TodoWrapper = () => {
 
     const addTodo = todo => {
         setTodos([...todos, {id: uuidv4(), task: todo, completed: false, isEditing: false}]);
-        console.log(todos);
     }
 
     const toggleComplete = id => {
@@ -25,14 +24,16 @@ export const TodoWrapper = () => {
     }
 
     const editTodo = id => {
-      setTodos(todos.map(todo => todo.id === id ? {...todo, isEditing: !todo.isEditing} : todo));
+      setTodos(
+        todos.map(
+            todo => todo.id === id ? {...todo, isEditing: !todo.isEditing} : todo)
+      );
     }
 
     const editTask = (task, id) => {
       setTodos(
         todos.map((todo) =>
-          todo.id === id ? { ...todo, task, isEditing: !todo.isEditing } : todo
-        )
+          todo.id === id ? { ...todo, task, isEditing: !todo.isEditing } : todo)
       );
     }
 
